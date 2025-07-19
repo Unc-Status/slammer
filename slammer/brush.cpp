@@ -143,20 +143,25 @@ float Clamp_Face(face_t* f) {
 }
 
 //light axis
-float face_lightaxis[3] = {0.5f, 0.10f, 0.3f};
+float flightaxis[3] = {0.5f, 0.10f, 0.3f};
 
 /*
 =================
     Face_Free
 =================
 */
+//texture tool for the face->[/]
 TexTool g_pfacetool;
 
-//now free it
+/*
+   now free the face
+   when we free the face we unselect the face
+   this code DOESN'T unselect the FULL BRUSH
+*/
 void Face_Free(face_t* f) {
 	free(f);
 	g_pfacetool.~TexTool();
-	f->texture == NULL;
+	f->texture == NULL;//get rid of texture
 }
 
 /*
@@ -164,6 +169,7 @@ void Face_Free(face_t* f) {
 	Face_Winding
 ====================
 */
+//this is really bad code im suprised if it works or compiles...
 void Face_Winding(face_t* face, winding_t* winding) {
 	brush_t* brush = nullptr;
 	plane_t* p1 = nullptr;
