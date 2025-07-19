@@ -2,19 +2,17 @@
 /*brush.cpp*/
 /*praise the Lord*/
 
-#ifndef cplusplus 0
-#define cplusplus 0
 #include "ibrush.h"
-#endif
 
 #ifndef __IBRUSH_H__
 #define __IBRUSH_H__
-typedef brush_t ibrush_t;
 #endif
 
 #ifndef __SELECTBRUSH__
 #define __SELECTBRUSH__
 #endif
+
+extern "cplusplus"{
 
 bool bBrushPrimitMode;//will move into global_t eventually
 
@@ -31,7 +29,7 @@ int g_nBrushId = 0;
 const char* Brush_Count(brush_t* b) {
 	static char cBuff[1024];
 	b->bnumid = g_nBrushId++;
-	if ( bBrushPrimitMode && __IBRUSH_H__ ) {
+	if ( bBrushPrimitMode ? 0 : 1 ) {
 		sprintf_s(cBuff, "Brush %5.2i", b->bnumid);
 	}
  return cBuff;
@@ -227,4 +225,6 @@ void Assert_Plane(plane_t* plane) {
 */
 void Assert_Face(face_t* face) {
 	assert(face);
+}
+
 }
