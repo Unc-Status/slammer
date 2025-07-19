@@ -139,7 +139,7 @@ face_t* Alloc_Face() {
 float Clamp_Face(face_t* f) {
    //I think we will leave this empty
 	*f == NULL;
-	static_cast<brush_t>(*f);
+	static_cast<brush_t>(f);
 }
 
 //light axis
