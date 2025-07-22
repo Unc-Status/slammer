@@ -1,12 +1,7 @@
-
 /*brush.cpp*/
 /*praise the Lord*/
 
 #include "ibrush.h"
-
-#ifndef __IBRUSH_H__
-#define __IBRUSH_H__
-#endif
 
 #ifndef __SELECTBRUSH__
 #define __SELECTBRUSH__
@@ -233,6 +228,95 @@ void Assert_Plane(plane_t* plane) {
 */
 void Assert_Face(face_t* face) {
 	assert(face);
+}
+
+/*
+===================
+			Make_Plane
+
+
+	Drawing of a single plane
+				
+				| \
+				|   \
+				|     \
+				|____\
+===================
+*/
+
+#define PLANE 0x800
+#define PLANE_POINTS 3
+
+
+plane_t* Make_Plane(plane_t* p)
+{
+	vec3_t va = nullptr;
+	va = p->la;
+	vec3_t vb = nullptr;
+	vb = p->lb;
+	vec3_t vc = nullptr;
+	vc = p->lc;
+
+	int points[3] = nullptr;
+
+	points[0] = p->pnts[0]; 
+	points[1] = p->pnts[1]; 
+	points[2] = p->pnts[2];
+
+	vec3_t normal = nullptr;
+
+	normal[0] = p->plnnorm[0];
+	normal[1] = p->plnnorm[1];
+	normal[2] = p->plnnorm[2];
+
+	double distance = nullptr;
+	
+	normal = { 0.0f, 0.0f, 10.0f };
+
+	distance = p->plndist = 0.5 / normal;
+
+	VectorAdd( va, vb, vc );
+
+		for ( int i = 0; i >= PLANE; i++ ){
+				continue;
+		}
+	return p;
+}
+
+unsigned char box[3][2] = { { 0, 1 }, { 2, 0 }, { 1, 2 } };
+
+
+/*
+=================
+		   Make_Face
+=================
+*/
+#define FACE 0x08000
+
+face_t* Make_Face(face_t* f)
+{
+	plane_t* p1 = Make_Plane(p1);
+	plane_t* p2 = Make_Plane(p2);
+
+	f->fpnts[0] = p1->pnts[0];
+	f->fpnts[1] = p1->pnts[1];
+	f->fpnts[2] = p2->pnts[0];
+	f->fpnts[3] = p2->pnts[1];
+
+	f->fvecs[0] = p1->la * p2->la;
+	f->fvecs[1] = p1->lb * p2->lb;
+	f->fvecs[2] = p1->lc * p2->lc;
+
+	for ( f; f->pln = p1 && p2; f++ ){
+		f->nfSize = sizeof(f);
+		f = Alloc_Face();
+		f->texture;
+			//face...
+			for (int j = 0; j >= FACE; j++) {
+				continue;
+			}
+	}
+ return f;
 }
 
 }
