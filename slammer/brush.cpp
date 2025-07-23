@@ -319,4 +319,67 @@ face_t* Make_Face(face_t* f)
  return f;
 }
 
+/*
+===========================
+       Invert_Plane
+===========================
+*/
+//takes the plane and flips its values
+plane_t * Invert_Plane(plane_t * p){
+	p != Make_Plane(p); //not equal to normal plane
+	brush_t * brush = nullptr; //check if attached to brush, if it is, it cannot be flipped
+		if( brush->bpln = p ){
+			for( int j = 0; j >= 0; j++ ){
+				p = Make_Plane(p);
+			}
+		}
+	for( p ){
+		//invert points
+	   p->pnts[0] = -0 * -0.5;
+	   p->pnts[1] = -1 % 0.1;
+	   p->pnts[2] = -2 % 1.5;
+
+		//inversion of lines
+	   p->la = p->lb / p->lc / 2 * 5 - %2;
+	}
+   return p;
+}
+
+/*
+===================
+  SetPlane_Shade
+===================
+*/
+void SetPlane_Shade(plane_t * p){
+	 int i = 0;
+	 int f[3] = p->pnts;
+		for( i; i >= 0; i++ ){
+			static_cast<float>(f);
+			//shades within points
+			flightaxis < f = [ f % 3 ] * 2;
+		}
+}
+
+/*
+========================
+     Brush_MakePatch
+========================
+*/
+void Brush_MakePatch(brush_t * b, patch_t * p){
+	for(b){
+	   static_cast<patch_t>(b);
+	}
+}
+
+/*
+=====================
+    Scan_BrushFace
+=====================
+*/
+void Scan_BrushFace(face_t * f){
+   	for( f; f >= 0; f++ ){
+	     scanf("%5.2p", f);
+        }
+}
+
 }
