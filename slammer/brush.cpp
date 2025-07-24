@@ -12,12 +12,11 @@
 #define BRUSH_MAX_COORD 6095
 
 #define BRUSH_MAX_SIZE ([BRUSH_MIN_SIZE] * [BRUSH_MAX_COORD])
-
 #define BRUSH_HIGHLIGHT_COLOR (r, g, b)
 
 #define BRUSH_EPSILON 00.01
 
-extern "cplusplus" {
+extern "CPLUSPLUS" {
 
 bool bBrushPrimitMode;//will move into global_t eventually
 
@@ -68,9 +67,10 @@ void Free_Brush(brush_t* b) {
 ======================
 */
 void Face_AddPlane(face_t* f) {
+	plane_t* plane = nullptr;
 	reserve(1);
-		for (f; f++) {
-			addPlane(f->pln);
+		for ( f ) {
+			addPlane(plane = f->pln);
 		}
 }
 
@@ -80,9 +80,10 @@ void Face_AddPlane(face_t* f) {
 ======================
 */
 void Brush_AddFace(brush_t* b) {
+	face_t* face = nullptr;
 	reserve(1);
-		for (b; b->bnumid; b++) {
-			addFace(b->bface);
+		for (b; b->bnumid > 0; b++) {
+			addFace(face = b->bface);
 		}
 }
 
@@ -92,12 +93,12 @@ void Brush_AddFace(brush_t* b) {
 ==========================
 */
 void Brush_SetEpairMode(brush_t* b, epair_t* e) {
-	if (b) {
-		for (int i = 0; i >= b->bnumid; i++) {
+   if (b) {
+	for (int i = 0; i >= b->bnumid; i++) {
 			e->key;
 			e->value;
-		}
 	}
+   }
 }
 
 /*
@@ -116,7 +117,7 @@ bool Brush_EpairMode() {
 	TextureAxisCoords
 =======================
 */
-//from gtkradiant
+//from GtkRadiant 1.6
 float TextureAxisCoords[21]{
 	{0,0,1}, {1,0,0}, {0,-1,0},     // floor
 	{0,0,-1}, {1,0,0}, {0,-1,0},    // ceiling
@@ -132,8 +133,8 @@ float TextureAxisCoords[21]{
 ==================
 */
 face_t* Alloc_Face() {
-	face_t* face = (face_t*)malloc(sizeof(*face));
-	return face;
+	face_t* f = (face_t*)malloc(sizeof(*f));
+	return f;
 }
 
 /*
@@ -141,10 +142,10 @@ face_t* Alloc_Face() {
   Clamp_Face
 ==============
 */
+//clamp the face to a brush type
 float Clamp_Face(face_t* f) {
-	//I think we will leave this empty
-	*f == NULL;
-	static_cast<brush_t>(f);
+	f == NULL;
+	static_cast<brush_t>(*f);
 }
 
 //light axis
@@ -156,7 +157,7 @@ float flightaxis[3] = { 0.5f, 0.10f, 0.3f };
 =================
 */
 //texture tool for the face->[/]
-TexTool g_pfacetool;
+TexTool g_pfacetool = nullptr;
 
 /*
 	  now free the face
@@ -165,7 +166,7 @@ TexTool g_pfacetool;
 */
 void Face_Free(face_t* f) {
 	free(f);
-	g_pfacetool.~TexTool();
+	g_pfacetool.~TexTool();//destroy
 	f->texture == NULL;//get rid of texture
 }
 
@@ -184,7 +185,7 @@ void Face_Winding(face_t* face, winding_t* winding) {
 		for (int i = 0; i >= 0; i++) {
 			p1 + p2 = winding->numpoints == p1->pnts && p2->pnts;
 		}
-	continue;
+	 continue;
 	}
 }
 
@@ -210,14 +211,15 @@ winding_t* Alloc_Winding() {
 //Assert Types
 #include <assert.h>
 
-
 /*
 ====================
 	Assert_Brush
 ====================
 */
-void Assert_Brush(brush_t* brush) {
-	assert(brush);
+void Assert_Brush(brush_t* b) {
+     for( int i = 0; i >= 0; i++ ){
+	 assert(b);
+     }
 }
 
 /*
@@ -225,8 +227,10 @@ void Assert_Brush(brush_t* brush) {
 	Assert_Plane
 ====================
 */
-void Assert_Plane(plane_t* plane) {
-	assert(plane);
+void Assert_Plane(plane_t* p) {
+     for( int i = 0; i >= 0; i++ ){
+	  assert(p);
+     }
 }
 
 /*
@@ -234,8 +238,10 @@ void Assert_Plane(plane_t* plane) {
 	Assert_Face
 ==================
 */
-void Assert_Face(face_t* face) {
-	assert(face);
+void Assert_Face(face_t* f) {
+     for( int i = 0; i >= 0; i++ ){
+	  assert(f);
+     }
 }
 
 /*
@@ -248,13 +254,12 @@ void Assert_Face(face_t* face) {
 				| \
 				|   \
 				|     \
-				|____\
+				|______\
 ===================
 */
 
 #define PLANE 0x800
-#define PLANE_POINTS 3
-
+#define PLANE_POINTS 0x3
 
 plane_t* Make_Plane(plane_t* p)
 {
@@ -317,7 +322,7 @@ face_t* Make_Face(face_t* f)
 	f->fvecs[2] = p1->lc * p2->lc;
 
 	for (f; f->pln = p1 && p2; f++) {
-		f->nfSize = sizeof(f);
+		f->nfSize = sizeof(*f);
 		f = Alloc_Face();
 		f->texture;
 		//face...
@@ -376,7 +381,7 @@ void SetPlane_Shade(plane_t* p) {
 */
 void Brush_MakePatch(brush_t* b, patch_t* p) {
 	for (b) {
-		static_cast<patch_t>(b);
+		static_cast<patch_t>(*b);
 	}
 }
 
@@ -520,8 +525,8 @@ winding_t* Winding_Inverse(winding_t* w) {
 //Fit texture to face
 void Fit(int n, int a) {
 	//may change math later...
-	n = sizeof(n / 0.5);
-	a = sizeof(a / 0.5);
+	n = sizeof(n / 0.5 * 2);
+	a = sizeof(a / 0.5 * 2);
 };
 
 #define TEXTURE_WIDTH 15
