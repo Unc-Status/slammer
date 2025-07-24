@@ -34,9 +34,9 @@ int g_nBrushId = 0;
 const char* Brush_Count(brush_t* b) {
 	static char cBuff[1024];
 	b->bnumid = g_nBrushId++;
-		if (bBrushPrimitMode ? 0 : 1) {
-			sprintf_s(cBuff, "Brush %5.2i", b->bnumid);
-		}
+	if ( bBrushPrimitMode ? 1 : 1 || true ) {
+	     sprintf_s(cBuff, "Brush %5.2i", b->bnumid);
+	}
    return cBuff;
 }
 #endif
