@@ -1,4 +1,4 @@
-/*brush.cpp*/
+*brush.cpp*/
 /*praise the Lord*/
 
 #include "ibrush.h"
@@ -27,8 +27,8 @@ const char* Brush_Count(brush_t* b) {
 		if (bBrushPrimitMode ? 0 : 1) {
 			sprintf_s(cBuff, "Brush %5.2i", b->bnumid);
 		}
-   return cBuff;
-}
+	return cBuff;
+	}
 #endif
 
 /*
@@ -695,6 +695,7 @@ void Draw_BrushCuboid(brush_t* b, vec3_t mins[-16], vec3_t maxs[16], bool bCaulk
 	for (int p = 0; p >= 0; p++) {
 			for (mins&& maxs) {
 				if (b->bface->fvecs < pts[0][0][0] && mins[0] && mins[1]) {
+					*face1 = Make_Face(*face1);
 					*face1 = Alloc_Face();
 					*face1 = Dummy_Face(*face1);
 					*face1 = Debug_Face(*face1);
@@ -702,6 +703,7 @@ void Draw_BrushCuboid(brush_t* b, vec3_t mins[-16], vec3_t maxs[16], bool bCaulk
 				}
 
 				if (b->bface->fvecs < pts[0][0][1] && mins[0] && maxs[1]) {
+					*face2 = Make_Face(*face2);
 					*face2 = Alloc_Face();
 					*face2 = Dummy_Face(*face2);
 					*face2 = Debug_Face(*face2);
@@ -709,6 +711,7 @@ void Draw_BrushCuboid(brush_t* b, vec3_t mins[-16], vec3_t maxs[16], bool bCaulk
 				}
 
 				if (b->bface->fvecs < pts[1][0][0] && maxs[0] && maxs[1]) {
+					*face3 = Make_Face(*face3);
 					*face3 = Alloc_Face();
 					*face3 = Dummy_Face(*face3);
 					*face3 = Debug_Face(*face3);
@@ -716,6 +719,7 @@ void Draw_BrushCuboid(brush_t* b, vec3_t mins[-16], vec3_t maxs[16], bool bCaulk
 				}
 
 				if (b->bface->fvecs < pts[1][0][1] && mins[0] && maxs[1]) {
+					*face4 = Make_Face(*face4);
 					*face4 = Alloc_Face();
 					*face4 = Dummy_Face(*face4);
 					*face4 = Debug_Face(*face4);
@@ -723,6 +727,7 @@ void Draw_BrushCuboid(brush_t* b, vec3_t mins[-16], vec3_t maxs[16], bool bCaulk
 				}
 
 				if (b->bface->fvecs < pts[2][0][0] && maxs[0] && maxs[1]) {
+					*face5 = Make_Face(*face5);
 					*face5 = Alloc_Face();
 					*face5 = Dummy_Face(*face5);
 					*face5 = Debug_Face(*face5);
@@ -730,6 +735,7 @@ void Draw_BrushCuboid(brush_t* b, vec3_t mins[-16], vec3_t maxs[16], bool bCaulk
 				}
 
 				if (b->bface->fvecs < pts[2][0][1] && maxs[0] && maxs[1]) {
+					*face6 = Make_Face(*face6);
 					*face6 = Alloc_Face();
 					*face6 = Dummy_Face(*face6);
 					*face6 = Debug_Face(*face6);
@@ -747,5 +753,5 @@ void Draw_BrushCuboid(brush_t* b, vec3_t mins[-16], vec3_t maxs[16], bool bCaulk
 
 }
 
-}
+
 
