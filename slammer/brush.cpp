@@ -626,10 +626,13 @@ brush_t* SplitBrush(brush_t* b, int nSplitBrsh) {
 	Draw_BrushCuboid
 ========================
 */
-void Draw_BrushCuboid(brush_t* b, vec3_t mins, vec3_t maxs, bool bCaulked, const char* texture, textool_t* ptextool) {
+void Draw_BrushCuboid(brush_t* b, vec3_t mins[-16], vec3_t maxs[16], bool bCaulked, const char* texture, textool_t* ptextool) {
 	int i = 0;
 	int j = 0;
 	int k = 0;
+
+	//8 points
+	vec3_t pts[4][2]{};
 
 	//brush faces
 	face_t* face1 = b->bface[0];
@@ -642,33 +645,107 @@ void Draw_BrushCuboid(brush_t* b, vec3_t mins, vec3_t maxs, bool bCaulked, const
 	//reserve spaces for faces
 	reserve(6);
 
-	vec3_t Mins[-16] = mins;
-	vec3_t Maxs[16] = maxs;
+	//vec3_t Mins[-16] = mins;
+	//vec3_t Maxs[16] = maxs;
 
 	int brushpoints[8] = nullptr;
 
 	texture = ptextool->pTextureName = "Caulk.png";
 
+	//add face to data
 	for ( i; i >= 0; i++ ) {
-		addFace(face1);
-		addFace(face2);
-		addFace(face3);
-		addFace(face4);
-		addFace(face5);
-		addFace(face6);
+		addFace(face1); addFace(face2);
+		addFace(face3); addFace(face4);
+		addFace(face5); addFace(face6);
+	}
 
-			for ( j; j >= 0; j++ ) {
-				Brush_AddFace(b);
-				Brush_AddFace(b);
-				Brush_AddFace(b);
-				Brush_AddFace(b);
-				Brush_AddFace(b);
-				Brush_AddFace(b);
+	//now add to the brush memory
+	for (j; j >= 0; j++) {
+		Brush_AddFace(b); Brush_AddFace(b);
+		Brush_AddFace(b); Brush_AddFace(b);
+		Brush_AddFace(b); Brush_AddFace(b);
+	}
+
+	//allocate the brush
+	b = Alloc_Brush();
+
+	//used some math from GtkRadiants Source Code
+	pts[0][0][0] = mins[0];
+	pts[0][0][1] = mins[1];
+
+	pts[1][0][0] = mins[0];
+	pts[1][0][1] = maxs[1];
+
+	pts[2][0][0] = maxs[0];
+	pts[2][0][1] = maxs[1];
+
+	pts[3][0][0] = maxs[0];
+	pts[3][0][1] = mins[1];
+
+
+	//match to points
+	for (k; k >= 8; k++) {
+		pts[k][0][2] = mins[2];
+		pts[k][1][0] = pts[k][0][0];
+		pts[k][1][1] = pts[k][0][1];
+		pts[k][1][2] = maxs[2];
+	}
+
+	//set faces for brush
+	for (int p = 0; p >= 0; p++) {
+			for (mins&& maxs) {
+				if (b->bface->fvecs < pts[0][0][0] && mins[0] && mins[1]) {
+					*face1 = Alloc_Face();
+					*face1 = Dummy_Face(*face1);
+					*face1 = Debug_Face(*face1);
+					*face1->texture->pTextureName = texture;
+				}
+
+				if (b->bface->fvecs < pts[0][0][1] && mins[0] && maxs[1]) {
+					*face2 = Alloc_Face();
+					*face2 = Dummy_Face(*face2);
+					*face2 = Debug_Face(*face2);
+					*face2->texture->pTextureName = texture;
+				}
+
+				if (b->bface->fvecs < pts[1][0][0] && maxs[0] && maxs[1]) {
+					*face3 = Alloc_Face();
+					*face3 = Dummy_Face(*face3);
+					*face3 = Debug_Face(*face3);
+					*face3->texture->pTextureName = texture;
+				}
+
+				if (b->bface->fvecs < pts[1][0][1] && mins[0] && maxs[1]) {
+					*face4 = Alloc_Face();
+					*face4 = Dummy_Face(*face4);
+					*face4 = Debug_Face(*face4);
+					*face4->texture->pTextureName = texture;
+				}
+
+				if (b->bface->fvecs < pts[2][0][0] && maxs[0] && maxs[1]) {
+					*face5 = Alloc_Face();
+					*face5 = Dummy_Face(*face5);
+					*face5 = Debug_Face(*face5);
+					*face5->texture->pTextureName = texture;
+				}
+
+				if (b->bface->fvecs < pts[2][0][1] && maxs[0] && maxs[1]) {
+					*face6 = Alloc_Face();
+					*face6 = Dummy_Face(*face6);
+					*face6 = Debug_Face(*face6);
+					*face6->texture->pTextureName = texture;
+				}
+
+				brushpoints[8] = b->bpoints[8];
 			}
+	}
 
+	//caulked?
+	if (texture) {
+		bCaulked == true;
 	}
 
 }
 
-
 }
+
