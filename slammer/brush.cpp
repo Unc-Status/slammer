@@ -3,8 +3,8 @@
 
 #include "ibrush.h"
 
-#ifndef __SELECTBRUSH__
-#define __SELECTBRUSH__
+#ifndef SELECT_BRUSH
+#define SELECT_BRUSH
 #endif
 
 extern "cplusplus" {
@@ -20,15 +20,15 @@ int g_nBrushId = 0;
 	 Brush_Count
 =====================
 */
-#ifdef __SELECTBRUSH__
+#ifdef SELECT_BRUSH
 const char* Brush_Count(brush_t* b) {
 	static char cBuff[1024];
 	b->bnumid = g_nBrushId++;
 		if (bBrushPrimitMode ? 0 : 1) {
 			sprintf_s(cBuff, "Brush %5.2i", b->bnumid);
 		}
-	return cBuff;
-	}
+   return cBuff;
+}
 #endif
 
 /*
@@ -626,7 +626,7 @@ brush_t* SplitBrush(brush_t* b, int nSplitBrsh) {
 	Draw_BrushCuboid
 ========================
 */
-void Draw_BrushCuboid(brush_t* b, vec3_t mins[-16], vec3_t maxs[16], bool bCaulked, const char* texture, textool_t* ptextool) {
+void Draw_BrushCuboid(brush_t* b, vec3_t mins[16], vec3_t maxs[16], bool bCaulked, const char* texture, textool_t* ptextool) {
 	int i = 0;
 	int j = 0;
 	int k = 0;
@@ -753,5 +753,21 @@ void Draw_BrushCuboid(brush_t* b, vec3_t mins[-16], vec3_t maxs[16], bool bCaulk
 
 }
 
+/*
+=====================
+	Select_Brush
+=====================
+*/
+static bool Select_Brush(brush_t* b) {
+	if (SELECT_BRUSH) {
+		//get the points and faces
+		for (b; b->bpoints[8]; b->bface[6]; ) {
+			Draw_BrushCuboid(b, b->bmins, b->bmaxs, true, b->bface->texture->pTextureName, b->btexture);
+			continue;
+		}
+	}
+ return bBrushPrimitMode = true;
+}
 
 
+}
