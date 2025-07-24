@@ -27,8 +27,8 @@ const char* Brush_Count(brush_t* b) {
 		if (bBrushPrimitMode ? 0 : 1) {
 			sprintf_s(cBuff, "Brush %5.2i", b->bnumid);
 		}
-	return cBuff;
-	}
+   return cBuff;
+}
 #endif
 
 /*
