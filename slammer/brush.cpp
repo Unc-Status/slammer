@@ -818,5 +818,21 @@ static bool Select_Brush(brush_t* b) {
  return bBrushPrimitMode = true;
 }
 
+/*
+=======================
+   MakeBrush_Pyramid
+=======================
+*/
+brush_t* MakeBrush_Pyramid(brush_t * b, vec3_t mins, vec3_t maxs, float sides[5], bool bConcave){
+}
+
+/*
+========================
+   MakeBrush_Cylinder
+========================
+*/
+brush_t* MakeBrush_Cylinder(brush_t * b, vec3_t mins, vec3_t maxs, bool bHollow, float faces[2]){
+}
+
 
 }
