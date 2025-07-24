@@ -109,9 +109,11 @@ void Brush_SetEpairMode(brush_t* b, epair_t* e) {
 =======================
 */
 bool Brush_EpairMode() {
-	brush_t* brush = nullptr;
-	epair_t* epair = nullptr;
-	Brush_SetEpairMode(brush, epair);
+     brush_t* brush = nullptr;
+     epair_t* epair = nullptr;
+	
+     Brush_SetEpairMode(brush, epair);
+ return true;	
 }
 
 /*
