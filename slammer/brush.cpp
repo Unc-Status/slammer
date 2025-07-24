@@ -249,6 +249,36 @@ void Assert_Face(face_t* f) {
 }
 
 /*
+===============
+  Plane_Clone
+===============
+*/
+plane_t* Plane_Clone(plane_t* p){
+	p = Alloc_Plane();
+	memcpy(p->pnts, p->plnnorm, sizeof(*p));	
+}
+
+/*
+==============
+  Face_Clone
+==============
+*/
+face_t* Face_Clone(face_t* f){
+	f = Alloc_Face();
+	memcpy(f->fpnts, f->fvecs, sizeof(*f));
+}
+
+/*
+===============
+  Brush_Clone
+===============
+*/
+brush_t* Brush_Clone(brush_t* b){
+	b = Alloc_Brush();
+	memcpy(b->bnumid, b->btexture->pTextureName, sizeof(*b));
+}
+
+/*
 ===================
 			Make_Plane
 
