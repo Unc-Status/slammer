@@ -1,4 +1,4 @@
-*brush.cpp*/
+/*brush.cpp*/
 /*praise the Lord*/
 
 #include "ibrush.h"
