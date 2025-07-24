@@ -8,6 +8,15 @@
 #define SELECT_BRUSH
 #endif
 
+#define BRUSH_MIN_COORD -6095
+#define BRUSH_MAX_COORD 6095
+
+#define BRUSH_MAX_SIZE ([BRUSH_MIN_SIZE] * [BRUSH_MAX_COORD])
+
+#define BRUSH_HIGHLIGHT_COLOR (r, g, b)
+
+#define BRUSH_EPSILON 00.01
+
 extern "cplusplus" {
 
 bool bBrushPrimitMode;//will move into global_t eventually
