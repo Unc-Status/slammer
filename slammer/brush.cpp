@@ -1,6 +1,7 @@
-/*brush.cpp*/
-/*praise the Lord*/
+//File : brush.cpp
+//praise the Lord
 
+//includes
 #include "ibrush.h"
 
 #ifndef SELECT_BRUSH
