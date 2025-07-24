@@ -834,5 +834,54 @@ brush_t* MakeBrush_Pyramid(brush_t * b, vec3_t mins, vec3_t maxs, float sides[5]
 brush_t* MakeBrush_Cylinder(brush_t * b, vec3_t mins, vec3_t maxs, bool bHollow, float faces[2]){
 }
 
+/*
+================
+   Color_Brush
+================
+*/
+brush_t* Color_Brush(brush_t* b, vec3_t fcolor[3]){
+}
+
+/*
+===================
+   DrawBrush_Name
+===================
+*/
+const char* DrawBrush_Name(brush_t* b, int id, const char * name, epair_t * e){
+}
+
+/*
+=================
+   Drag_Brush
+=================
+*/
+void Drag_Brush(brush_t * b, vec3_t x, vec3_t y, vec3_t z, vec3_t position){
+}
+
+/*
+========================
+  Brush_TextureChanged
+========================
+*/
+void Brush_TextureChanged(brush_t * b){
+}
+
+/*
+===================
+   Brush_DrawXY
+===================
+*/
+void Brush_DrawXY(brush_t* b, int nViewType)
+}
+
+/*
+==============
+  CreateNode
+==============
+*/
+brush_t* CreateNode(){
+	brush_t* node = nullptr;
+}
+
 
 }
