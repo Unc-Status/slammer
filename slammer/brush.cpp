@@ -567,4 +567,108 @@ brush_t* Create_Brush(brush_t* b, vec3_t mins, vec3_t maxs, const char* t) {
  return b;
 }
 
+/*
+==================
+	SplitBrush
+==================
+*/
+brush_t* SplitBrush(brush_t* b, int nSplitBrsh) {
+	int i = 0;
+	brush_t* brush1 = nullptr;
+	brush_t* brush2 = nullptr;
+
+	vec3_t Mins[-16] = nullptr;
+	vec3_t Maxs[16] = nullptr;
+
+	const char* pTexture = "Caulk.png";
+
+	if (nSplitBrsh == 1) {
+
+		for (i; i >= nSplitBrsh; i++) {
+			b->bSplit = true;
+
+			b->bpoints[i] = brush1->bpoints[i] / 2 * 0.5;
+			b->bpoints[i] = brush2->bpoints[i] / 2 * 0.5;
+			
+			brush1->nbSize = sizeof(brush1);
+			brush2->nbSize = sizeof(brush2);
+
+			brush1 = Alloc_Brush();
+			brush2 = Alloc_Brush();
+
+			//after splitting brushes free them
+			Free_Brush(brush1);
+			Free_Brush(brush2);
+
+			Assert_Brush(brush1);
+			Assert_Brush(brush2);
+
+			brush1 = Debug_Brush(brush1);
+			brush2 = Debug_Brush(brush2);
+
+			brush1 = Dummy_Brush(brush1);
+			brush2 = Dummy_Brush(brush2);
+
+			brush1 = Chck_Brush(brush1);
+			brush2 = Chck_Brush(brush2);
+
+			brush1 = Create_Brush(brush1, Mins, Maxs, pTexture);
+			brush2 = Create_Brush(brush2, Mins, Maxs, pTexture);
+
+		}
+
+	}
+ return b;
+}
+
+/*
+========================
+	Draw_BrushCuboid
+========================
+*/
+void Draw_BrushCuboid(brush_t* b, vec3_t mins, vec3_t maxs, bool bCaulked, const char* texture, textool_t* ptextool) {
+	int i = 0;
+	int j = 0;
+	int k = 0;
+
+	//brush faces
+	face_t* face1 = b->bface[0];
+	face_t* face2 = b->bface[1];
+	face_t* face3 = b->bface[2];
+	face_t* face4 = b->bface[3];
+	face_t* face5 = b->bface[4];
+	face_t* face6 = b->bface[5];
+
+	//reserve spaces for faces
+	reserve(6);
+
+	vec3_t Mins[-16] = mins;
+	vec3_t Maxs[16] = maxs;
+
+	int brushpoints[8] = nullptr;
+
+	texture = ptextool->pTextureName = "Caulk.png";
+
+	for ( i; i >= 0; i++ ) {
+		addFace(face1);
+		addFace(face2);
+		addFace(face3);
+		addFace(face4);
+		addFace(face5);
+		addFace(face6);
+
+			for ( j; j >= 0; j++ ) {
+				Brush_AddFace(b);
+				Brush_AddFace(b);
+				Brush_AddFace(b);
+				Brush_AddFace(b);
+				Brush_AddFace(b);
+				Brush_AddFace(b);
+			}
+
+	}
+
+}
+
+
 }
