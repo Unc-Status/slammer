@@ -24,6 +24,8 @@ bool bBrushPrimitMode;//will move into global_t eventually
 //	globals
 int g_nBrushId = 0;
 
+FILE* Brush_SaveFile(const char* pFilename);
+
 /*
 =====================
 	 Brush_Count
