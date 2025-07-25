@@ -15,7 +15,7 @@ GtkDialog * m_pDialog;
 
 EntryPreferenceDialog * g_pDlgFrame(){return nullptr;};
 
-EntryPreferenceDialog::EntryPreferenceDialog() : ( m_pDialog )
+EntryPreferenceDialog::EntryPreferenceDialog() : ( *m_pDialog )
 {
       g_pDlgFrame()->DlgId = g_nDlgNumberId++;
       g_pDlgFrame()->g_bShowDlg = bDlgShow;
