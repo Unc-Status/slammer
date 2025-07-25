@@ -18,6 +18,7 @@ public:
 
   int DlgId = 0;
   bool bDlgShow;
+  const char * DlgTitle[];
 
   void DlgTitle(EntryPreferenceDialog * dlg, const char * pTitle, bool bShow);
   void DlgShow(EntryPerferenceDialog * dlg, GtkWidget * pWidget, int x, int y, bool bShow);
