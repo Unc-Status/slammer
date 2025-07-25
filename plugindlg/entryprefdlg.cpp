@@ -15,8 +15,8 @@ EntryPreferenceDialog * g_pDlgFrame(){return nullptr;};
 
 EntryPreferenceDialog::EntryPreferenceDialog() : ( m_pDialog )
 {
-      g_pDlgFrame()->
-      g_pDlgFrame()->
+      g_pDlgFrame()->DlgId = g_nDlgNumberId++;
+      g_pDlgFrame()->g_bShowDlg = bDlgShow;
 }
 
 EntryPreferenceDialog::~EntryPreferenceDialog()
