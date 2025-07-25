@@ -5,4 +5,14 @@
 #ifndef __ENTITY_W__
 #define __ENTITY_W__
 
+class EntityW
+{
+public:
+  EntityW();
+  virtual ~EntityW();
+
+  int entityid = nullptr;
+
+};
+
 #endif
