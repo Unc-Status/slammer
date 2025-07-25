@@ -35,7 +35,7 @@ FILE* Brush_SaveFile(const char* pFilename);
 const char* Brush_Count(brush_t* b) {
 	static char cBuff[1024];
 	b->bnumid = g_nBrushId++;
-	if ( bBrushPrimitMode ? 1 : 1 || true ) {
+	if ( bBrushPrimitMode == true ) {
 	     sprintf_s(cBuff, "Brush %5.2i", b->bnumid);
 	}
    return cBuff;
