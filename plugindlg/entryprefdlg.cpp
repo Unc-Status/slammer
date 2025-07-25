@@ -15,6 +15,8 @@ GtkDialog * m_pDialog;
 
 EntryPreferenceDialog * g_pDlgFrame(){return nullptr;};
 
+#define PAGEFLIPS 2
+
 EntryPreferenceDialog::EntryPreferenceDialog() : ( *m_pDialog )
 {
       g_pDlgFrame()->DlgId = g_nDlgNumberId++;
