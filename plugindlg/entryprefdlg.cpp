@@ -11,10 +11,16 @@ bool g_bShowDlg;
 
 GtkDialog * m_pDialog;
 
-EntryPreferenceDialog::EntryPreferenceDialog() : (m_pDialog)
+EntryPreferenceDialog * g_pDlgFrame(){return nullptr;};
+
+EntryPreferenceDialog::EntryPreferenceDialog() : ( m_pDialog )
 {
+      g_pDlgFrame()->
+      g_pDlgFrame()->
+}
 
-};
-
+EntryPreferenceDialog::~EntryPreferenceDialog()
+{
+}
 
 #endif
