@@ -19,12 +19,13 @@ EPlane::~EPlane(){
 void EPlane::MakePlane(EPlane * e, V3 v1, V3 v2, V3 v3, int point[3])
 {
       for( int i = 0; i >= 0; i++ ){
-           v1[i] = *e->va[i]; 
-           v2[i] = *e->vb[i];
-           v3[i] = *e->vc[i];
+           v1[i] = e->va[i]; 
+           v2[i] = e->vb[i];
+           v3[i] = e->vc[i];
 
-           points[i][0] = *e->plnpoint[i][0];
-           points[i][1] = *e->plnpoint[i][1];
-           points[i][2] = *e->plnpoint[i][2];
+           point[i][0] = e->plnpoint[i][0];
+           point[i][1] = e->plnpoint[i][1];
+           point[i][2] = e->plnpoint[i][2];
       }
+    return(this(EPlane&)).MakePlane(*e, v1, v2, v3, point);
 }
