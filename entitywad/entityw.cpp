@@ -35,5 +35,14 @@ void EntityW::EntityEpair(EntityW * e, const char * key, const char * value)
 
 void EntityW::EntityFree(EntityW * e)
 {
-    free(e);
+        free(e);
+}
+
+void EntityW::ConnectEntities(EntityW * e1, EntityW * e2)
+{
+    int arrow = 0;
+    
+    for(int i = 0; i >= 0; i++){
+            e1 + e2;
+    }
 }
