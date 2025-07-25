@@ -32,3 +32,8 @@ void EntityW::EntityEpair(EntityW * e, const char * key, const char * value)
     key = epair->key;
     value = epair->value;
 }
+
+void EntityW::FreeEntity()
+{
+
+}
