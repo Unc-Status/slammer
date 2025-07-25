@@ -11,8 +11,8 @@ EntityW g_EntityClpbrd;
 
 EntityW::EntityW()
 {
-    g_EntityId = 0;
-    g_EntitySpawned = true;
+    g_EntityId = g_EntityClpbrd.entityid;
+    g_EntitySpawned = g_EntityClpbrd.entityspawned;
 }
 
 EntityW::~EntityW()
