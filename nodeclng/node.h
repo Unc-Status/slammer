@@ -19,7 +19,6 @@ public:
   vec3_t NodePosition;
 
   bool bNodeReset;
-
 };
 
 //pointer
