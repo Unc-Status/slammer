@@ -13,7 +13,7 @@ typedef false efalse;
 typedef char echar;
 
 typedef struct etype_s{
-   const echar* keyword[]{return "";};
+   const char* keyword[]{return "";};
 }etype_t;
 
 #endif
