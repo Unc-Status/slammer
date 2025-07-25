@@ -4,8 +4,6 @@
 #ifndef ENTRYPREFDLG_H
 #define ENTRYPREFDLG_H
 
-#define ENTDLGWIDGET 0x100
-
 #include <gtk/gtk.h>
 
 GtkDialog * m_pDlg;
@@ -17,7 +15,9 @@ public:
   virtual ~EntryPreferenceDialog();
 
   int DlgId = 0;
+    
   bool bDlgShow;
+    
   const char * DlgTitle[];
 
   void DlgTitle(EntryPreferenceDialog * dlg, const char * pTitle, bool bShow);
