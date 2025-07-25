@@ -4,7 +4,7 @@
 #define MAX_POINTS_ON_PLANE 3
 
 EPlane::EPlane(){
-
+   [MAX_POINTS_ON_PLANE];
 }
 
 EPlane::~EPlane(){
@@ -12,9 +12,9 @@ EPlane::~EPlane(){
 }
 
 /*
-========================
+=========================
    EPlane::MakePlane()
-========================
+=========================
 */
 void EPlane::MakePlane(EPlane * e, V3 v1, V3 v2, V3 v3, int point[3])
 {
