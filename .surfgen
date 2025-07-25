@@ -1,0 +1,7 @@
+<$surfgen>
+ @PLANE : %plane_t%
+ @FACE : %face_t%
+ @BRUSH : %brush_t%
+ @SURFACE : %surface_t%
+ @WINDING : %winding_t%
+<$surfgen\n>
