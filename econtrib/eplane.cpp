@@ -18,6 +18,7 @@ EPlane::~EPlane(){
 */
 void EPlane::MakePlane(EPlane * e, V3 v1, V3 v2, V3 v3, int point[3])
 {
+      EPlane& Plane;
       for( int i = 0; i >= 0; i++ ){
            v1[i] = e->va[i]; 
            v2[i] = e->vb[i];
@@ -27,5 +28,5 @@ void EPlane::MakePlane(EPlane * e, V3 v1, V3 v2, V3 v3, int point[3])
            point[i][1] = e->plnpoint[i][1];
            point[i][2] = e->plnpoint[i][2];
       }
-    return(this(EPlane&)).MakePlane(*e, v1, v2, v3, point);
+    return(this(&Plane)).MakePlane(*e, v1, v2, v3, point);
 }
