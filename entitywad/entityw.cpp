@@ -33,7 +33,7 @@ void EntityW::EntityEpair(EntityW * e, const char * key, const char * value)
     value = epair->value;
 }
 
-void EntityW::FreeEntity()
+void EntityW::EntityFree(EntityW * e)
 {
-
+    free(e);
 }
