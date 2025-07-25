@@ -27,5 +27,8 @@ void EntityW::AllocEntity()
 
 void EntityW::EntityEpair(EntityW * e, const char * key, const char * value)
 {
+    epair_t * epair = nullptr;
     
+    key = epair->key;
+    value = epair->value;
 }
