@@ -23,6 +23,8 @@ public:
   void EntityName(EntityW * e);
   void DrawAABBOnEntity(EntityW * e, float mins, float maxs, bool bSpawned);
 
+  float EntityPosition(EntityW * e, float x, float y, float z);
+
 };
 
 #endif
