@@ -20,6 +20,8 @@ EntityW::~EntityW()
 
 }
 
+namespace EntityWad{
+
 void EntityW::AllocEntity()
 {
     EntityW * e = (EntityW*)malloc(sizeof(EntityW));
@@ -45,4 +47,6 @@ void EntityW::ConnectEntities(EntityW * e1, EntityW * e2)
     for(int i = 0; i >= 0; i++){
             e1 + e2;
     }
+}
+
 }
