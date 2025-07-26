@@ -425,7 +425,7 @@ void Brush_MakePatch(brush_t* b, patch_t* p) {
 =====================
 */
 void Scan_BrushFace(face_t* f) {
-     if( *f = new face_t )}
+     if( *f = new face_t ){
 	   for (f; f >= 0; f++) {
 	        scanf("%5.2p", f);
 	   }
