@@ -17,6 +17,10 @@
     elements:
     - points[4]
     - bSelectable
+    - sva
+    - svb
+    - svc
+    - svd
 */
 
 #include "mathlib.h"
@@ -29,6 +33,12 @@ typedef struct surface_s ** next;
 
 float points[4];
 bool bSelectable;//shouldnt be true, if it is its automatically converted to a face
+
+
+vec3_t sva;
+vec3_t svb;
+vec3_t svc;
+vec3_t svd;
 
 }surface_t;
 
