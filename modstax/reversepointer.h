@@ -55,4 +55,13 @@ const char* ReverseClass(){
     return *code[*declrcptr];
 }
 
+//reverse struct pointer (same concept as class)
+const char* ReverseStruct(){
+    const char* declsptr = "<-?(*struct<-)";
+    if( code == declsptr ){
+        return "";
+    }
+    return *code[*declsptr];
+}
+
 #endif
