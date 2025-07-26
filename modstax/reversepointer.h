@@ -45,4 +45,14 @@ const char* ReverseDouble(){
     return *code[*_type];
 }
 
+//reverse class pointer
+const char* ReverseClass(){
+    //have to use symbols because class is not a variable
+    const char* declrcptr = "<-::@";
+    if( code == declrcptr ){
+        return "";
+    }
+    return *code[*declrcptr];
+}
+
 #endif
