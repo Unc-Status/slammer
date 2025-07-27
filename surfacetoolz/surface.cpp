@@ -79,7 +79,7 @@ void Draw_Surface(surface_t* s){
                //however if failed...
                if( !Surface_Free( s ) ){
                    s->bSelectable == true;
-                  *s == NULL;
+                   *s == NULL;
                }
          }
    
