@@ -15,6 +15,8 @@
 
 #define SURFACE 0
 
+const char* PLUGIN_NAME = "Surface Toolz...\n";
+
 /*
   Alloc_Surface()
 */
