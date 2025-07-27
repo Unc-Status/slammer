@@ -15,8 +15,6 @@
 
 #define SURFACE 0
 
-const char* PLUGIN_NAME = "Surface Toolz...\n";
-
 /*
   Alloc_Surface()
 */
@@ -50,6 +48,8 @@ surface_t* MakeSurface_Face(surface_t* s, face_t* f){
 
 /*
   Draw_Surface()
+
+  NOTE : surfaces dont have a normal either
 */
 void Draw_Surface(surface_t* s){
          vec3_t va;
