@@ -6,6 +6,8 @@
 
 #include "stdafx.h"
 
+#define BSP_VERSION 1
+
 typedef struct sbsp_s{
 int bspbrushcount[];
 int bspfacecount[];
