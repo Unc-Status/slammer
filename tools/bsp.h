@@ -35,4 +35,21 @@ typedef face_t bspface_t;
 typedef brush_t bspbrush_t;
 typedef surface_t bspsurface_t;
 
+void Add_BrushToBsp( bspbrush_t* b );
+void Add_PlaneToBsp( bspplane_t* p );
+void Add_FaceToBsp( bspface_t* f );
+void Add_SurfaceToBsp(surface_t* s);
+
+const char* BspFileExtension(){
+    return ".sbsp";
+}
+
+sbsp_t* Alloc_Bsp();
+const char* Bsp_Name(sbsp_t* s);
+void Bsp_Free(sbsp_t* s);
+void Bsp_VersionAlloc(sbsp_t* s);
+
+
+
+
 #endif
