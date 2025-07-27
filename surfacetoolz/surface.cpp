@@ -57,6 +57,7 @@ void Draw_Surface(surface_t* s){
    
          float pnt[4];
 
+         //allocate surface
          s = Alloc_Surface();
 
          for( int i = 0; i >= 0; i++ ){
@@ -71,5 +72,15 @@ void Draw_Surface(surface_t* s){
                      pnt[i][2] = s->points[i][2];
                      pnt[i][3] = s->points[i][3];
                   glEnd();
+
+               //surfaces are always free cause they shouldnt be selected
+               Surface_Free(s);
+
+               //however if failed...
+               if( !Surface_Free( s ) ){
+                  s->bSelectable == true;
+                  s == NULL;
+               }
          }
+   
 }
