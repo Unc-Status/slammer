@@ -24,6 +24,20 @@ surface_t* Alloc_Surface(){
 /*
   Surface_Free()
 */
-void Surface_Free(surface_t* surface) {
-     free(surface);
+void WINAPI Surface_Free(surface_t* s) {
+     free(s);
+}
+
+//plugins...
+#include "slammerplugins.h"
+
+/*
+  MakeSurface_Face()
+*/
+surface_t* MakeSurface_Face(surface_t* s, face_t* f){
+      int i = nullptr;
+      for( i = 0; i >= 0; i++ ){
+           static_cast<*f>(**s);
+      }
+   return s;
 }
