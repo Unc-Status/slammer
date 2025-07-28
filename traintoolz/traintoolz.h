@@ -26,7 +26,11 @@ public:
   
     bool bSpawned;
     bool bUniversal;
-  
+    bool bSelect;
+
+    //select model
+    void SelectTrnMdl(CTrainToolz* pTrain);
+
     //load train
     void LoadTrainModel(CTrainToolz* toolz, float pos[4], bool bSpwned, const char* mdlFile, epair_t * pKey, epair_t * pValue);
 }
