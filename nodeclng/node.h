@@ -4,7 +4,7 @@
 #ifndef __NODE_H__
 #define __NODE_H__
 
-#include "mathlib.h"
+#include "stdafx.h"
 
 class Node {
 public:
@@ -15,6 +15,8 @@ public:
   int NodeType = nullptr;
 
   int NodeCount = 0;
+
+  const char* NodeScript;
 
   vec3_t NodePosition;
 
