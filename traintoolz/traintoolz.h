@@ -9,20 +9,22 @@
 class CTrainToolz
 {
 public:
-  CTrainToolz();
-  virtual ~CTrainToolz();
+    CTrainToolz();
+    virtual ~CTrainToolz();
+  
+    vec3_t position;
+  
+    vec3_t x;
+    vec3_t y;
+    vec3_t z;
 
-  vec3_t position;
-
-  vec3_t x;
-  vec3_t y;
-  vec3_t z;
-
-  bool bSpawned;
-  bool bUniversal;
-
-  //load train
-  void LoadTrainModel(CTrainToolz* toolz, float pos[4], bool bSpwned, const char* mdlFile, epair_t * pKey, epair_t * pValue);
+    int trntlznumberid;
+  
+    bool bSpawned;
+    bool bUniversal;
+  
+    //load train
+    void LoadTrainModel(CTrainToolz* toolz, float pos[4], bool bSpwned, const char* mdlFile, epair_t * pKey, epair_t * pValue);
 }
 
 #endif
