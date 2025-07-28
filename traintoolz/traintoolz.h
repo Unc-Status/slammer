@@ -18,6 +18,10 @@ public:
     vec3_t y;
     vec3_t z;
 
+    const char* TTlzMdlFilename;
+
+    void LoadMdlFile(const char* mdlFilename);
+
     int trntlznumberid;
   
     bool bSpawned;
