@@ -3,6 +3,9 @@
 #include "pak.h"
 #include "ibrush.h"
 #include "ishader.h"
+#include "globals.h"
+#include "bsp.h"
+#include "caulk.h"
 
 //used for reserving space for faces
 void reserve(int n) {
