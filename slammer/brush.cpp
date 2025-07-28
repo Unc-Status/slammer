@@ -2,17 +2,10 @@
 //praise the Lord
 
 //includes
-#include "ibrush.h"
-
-#ifndef SELECT_BRUSH
-#define SELECT_BRUSH
-#endif
+#include "stdafx.h"
 
 #define BRUSH_MIN_COORD -6095
 #define BRUSH_MAX_COORD 6095
-
-#define BRUSH_MAX_SIZE ([BRUSH_MIN_SIZE] * [BRUSH_MAX_COORD])
-#define BRUSH_HIGHLIGHT_COLOR (r, g, b)
 
 #define BRUSH_EPSILON 00.01
 
@@ -31,16 +24,14 @@ FILE* Brush_SaveFile(const char* pFilename);
 	 Brush_Count
 =====================
 */
-#ifdef SELECT_BRUSH
 const char* Brush_Count(brush_t* b) {
 	static char cBuff[1024];
 	b->bnumid = g_nBrushId++;
-	if ( bBrushPrimitMode == true ) {
+	if ( g_seglobals.m_bBrushSelectMode ) {
 	     sprintf_s(cBuff, "Brush %5.2i", b->bnumid);
 	}
    return cBuff;
 }
-#endif
 
 /*
 =================
@@ -810,14 +801,14 @@ void Draw_BrushCuboid(brush_t* b, vec3_t mins[16], vec3_t maxs[16], bool bCaulke
 =====================
 */
 static bool Select_Brush(brush_t* b) {
-	if (SELECT_BRUSH) {
+	if ( g_seglobals.m_bBrushSelectMode ) {
 		//get the points and faces
 		for (b; b->bpoints[8]; b->bface[6]; ) {
 			Draw_BrushCuboid(b, b->bmins, b->bmaxs, true, b->bface->texture->pTextureName, b->btexture);
 			continue;
 		}
 	}
- return bBrushPrimitMode = true;
+ return g_seglobals.m_bBrushSelectMode == true;
 }
 
 /*
