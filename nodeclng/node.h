@@ -16,6 +16,11 @@ public:
 
   int NodeCount = 0;
 
+  epair_t* nodeepairlst;
+
+  const char* nKey;
+  const char* nValue;
+
   const char* NodeScript;
 
   vec3_t NodePosition;
