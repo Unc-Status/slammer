@@ -9,4 +9,9 @@ struct extension_t{
     const char* extension;
 };  
 
+struct file_t{
+    const char* fname;
+    int fsz;
+};
+
 #endif
