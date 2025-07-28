@@ -1,7 +1,9 @@
 <$surfgen>
-def @PLANE() : '@plane_t'
-def @FACE() : '@face_t'
-def @BRUSH() : '@brush_t'
-def @SURFACE() : '@surface_t'
-def @WINDING() : '@winding_t'
+
+ @PLANE() : '@plane_t'
+ @FACE() : '@face_t'
+ @BRUSH() : '@brush_t'
+ @SURFACE() : '@surface_t'
+ @WINDING() : '@winding_t'
+
 <$surfgen\n>
