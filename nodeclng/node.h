@@ -28,7 +28,4 @@ public:
   bool bNodeReset;
 };
 
-//pointer
-Node NodePtr;
-Node * Nde;
 #endif
