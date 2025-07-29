@@ -17,15 +17,16 @@ bool g_bDragBrush = false;
 bool g_bSelectBrush = false;
 bool g_bDrawBrush = false;
 
-brush_t* pXYBrushes = nullptr;
-plane_t* pXYPlanes = nullptr;
-face_t* pXYFaces = nullptr;
+brush_t pXYBrushes = nullptr;
+plane_t npXYPlanes = nullptr;
+face_t pXYFaces = nullptr;
 
 const char* g_cXYPrintTxt = nullptr;
 
 //Use GL
 void g_DrawXYIcon(const char* pXYIcon);
 
+//set xy const
 const int g_nViewType = XY;
 
 int g_nXYPlaneNumber = 0;
