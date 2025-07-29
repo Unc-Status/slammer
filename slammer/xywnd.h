@@ -4,6 +4,8 @@
 #ifndef XYWND_H
 #define XYWND_H
 
+#define XY
+
 #include "stdafx.h"
 #include <gtk/gtk.h>
 
