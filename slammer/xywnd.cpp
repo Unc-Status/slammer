@@ -20,6 +20,12 @@ bool g_bDrawBrush = false;
 brush_t pXYBrushes = nullptr;
 plane_t npXYPlanes = nullptr;
 face_t pXYFaces = nullptr;
+patch_t pXYPatches = nullptr;
+
+brush_t* brushes = nullptr;
+plane_t* planes = nullptr;
+face_t* faces = nullptr;
+patch_t* patches = nullptr;
 
 const char* g_cXYPrintTxt = nullptr;
 
@@ -52,4 +58,13 @@ XYWnd::XYWnd() : ( *g_pWnd->g_pXYWnd ){
 
 XYWnd::~XYWnd(){
 
+}
+
+//
+//Alloc_XY
+//
+XYWnd* XYWnd::Alloc_XY()
+{
+	XYWnd* xyfwrite = ( XYWnd* )malloc(sizeof(XYWnd));
+	return xyfwrite;
 }
