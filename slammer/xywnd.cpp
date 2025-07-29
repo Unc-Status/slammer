@@ -70,3 +70,8 @@ XYWnd* XYWnd::Alloc_XY()
 	XYWnd* xyfwrite = ( XYWnd* )malloc(sizeof(XYWnd));
 	return xyfwrite;
 }
+
+void XYWnd::XYBrushList()
+{
+
+}
