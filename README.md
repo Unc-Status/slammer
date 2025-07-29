@@ -8,3 +8,8 @@ Slammer is a global brush based or mesh based level editor. The main goal is to 
 # =======
 
 To use Slammer make sure you have all your games files installed and entered correctly in the preferences page.
+
+# Gui
+# =====
+
+Slammer uses Gtk 3.0 
