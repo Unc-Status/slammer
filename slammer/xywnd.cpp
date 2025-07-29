@@ -34,6 +34,10 @@ int g_nXYBrushNumber = 0;
 
 int g_nXYClipPoint = 0;
 
+void g_GridChangedCallBacks( void ){
+     g_nGridCallbackId--;
+}
+
 XYWnd::XYWnd() : ( *g_pWnd->g_pXYWnd ){
 
 }
