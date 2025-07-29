@@ -29,4 +29,18 @@ qbool bQuakeSel( qchar );//init game
 qchar QuakePath[2048];
 const qchar* QDirectories;
 
+typedef struct qtexture_s{
+       qchar QTEXPATH[2048];
+       const qchar* qtexture;
+       int qwidth;
+       int qheight;
+}qtexture_t;
+
+typedef struct qpolygon_s{
+    qbrush_t* quakepoly; 
+}qpolygon_t;
+
+typedef struct qbsp_s{
+     int qbrushnumber[];
+}qbsp_t;
 #endif
