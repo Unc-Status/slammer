@@ -7,7 +7,6 @@
 #define XY
 
 #include "stdafx.h"
-#include <gtk/gtk.h>
 
 GtkWidget* m_pWidget = nullptr;
 
