@@ -1,1 +1,2 @@
 *.surfgen linguist-language=C
+*.slerror linguist-language=Python
