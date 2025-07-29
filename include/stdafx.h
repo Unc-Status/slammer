@@ -7,6 +7,8 @@
 #include "bsp.h"
 #include "caulk.h"
 #include "pfngriddesc.h"
+#include "ientity.h"
+#include "entitylib.h"
 
 #include <gtk/gtk.h>
 
