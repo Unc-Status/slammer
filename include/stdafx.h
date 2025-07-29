@@ -6,6 +6,9 @@
 #include "globals.h"
 #include "bsp.h"
 #include "caulk.h"
+#include "pfngriddesc.h"
+
+#include <gtk/gtk.h>
 
 //used for reserving space for faces
 void reserve(int n) {
