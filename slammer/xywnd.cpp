@@ -42,7 +42,12 @@ void g_GridChangedCallBacks( void ){
 void DrawPoint( int );
 bool bQueDraw( int );
 
+XYWnd * g_pXYWnd(){return nullptr;};
+
 XYWnd::XYWnd() : ( *g_pWnd->g_pXYWnd ){
+	g_pXYWnd()->m_nXYRows = 512;
+	g_pXYWnd()->m_nXYColumns = 512
+	g_pXYWnd()->xywndnumberid = g_nGridCallbackId;
 	
 }
 
