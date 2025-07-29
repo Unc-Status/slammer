@@ -1,6 +1,6 @@
 #include "slammerplugins.h"
 #include "mathlib.h"
-#include "pak.h"
+#include "paklib.h"
 #include "ibrush.h"
 #include "ishader.h"
 #include "globals.h"
