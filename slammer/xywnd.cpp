@@ -26,7 +26,7 @@ const char* g_cXYPrintTxt = nullptr;
 //Use GL
 void g_DrawXYIcon(const char* pXYIcon);
 
-const int g_nViewType = nullptr;
+const int g_nViewType = XY;
 
 int g_nXYPlaneNumber = 0;
 int g_nXYFaceNumber = 0;
@@ -38,8 +38,10 @@ void g_GridChangedCallBacks( void ){
      g_nGridCallbackId--;
 }
 
-XYWnd::XYWnd() : ( *g_pWnd->g_pXYWnd ){
+void DrawPoint( int );
 
+XYWnd::XYWnd() : ( *g_pWnd->g_pXYWnd ){
+	
 }
 
 XYWnd::~XYWnd(){
