@@ -23,11 +23,24 @@ GRID_PEN_DRAW_COLOR Pen_Draw_White[3] = { 1.0f, 1.0f, 1.0f };
 GRID_PEN_DRAW_COLOR Pen_Draw_Black[3] = { 0.0f, 0.0f, 0.0f };
 
 //
+//widget
+//
+typedef struct gridwnd_s{
+  gridwnd_s ** next;
+  bool m_bDragged;
+  GtkWidget* m_pWidget = nullptr;
+}gridwnd_t;
+
+//
 //Functions
 //
 typedef void(*PFN_ALLOC_PEN_COLOR)();
 typedef void(*PFN_FREE_PEN)(GRID_PEN_DRAW_COLOR);//only for selected
 typedef bool(*BEGIN_PEN_DRAW)(GRID_PEN_DRAW_COLOR, brush_t* b, bool bSel);
 typedef bool(*QUE_DRAW)(GRID_PEN_DRAW_COLOR);
+typedef int(*PFN_DRAW_ROW)(int iRow);
+typedef int(*PFN_DRAW_COLUMN)(int iColumn);
+typedef gridwnd_t(*QUE_GRID_WINDOW)(GtkWidget* m_pGridWindow);
+typedef void(*PFN_UPDATE_GRID_WINDOW)(GtkWidget* m_pWidget);
 
 #endif
