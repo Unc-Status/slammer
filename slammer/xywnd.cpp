@@ -71,6 +71,9 @@ XYWnd* XYWnd::Alloc_XY()
 	return xyfwrite;
 }
 
+//
+//XYBrushList()
+//
 void XYWnd::XYBrushList()
 {
 
