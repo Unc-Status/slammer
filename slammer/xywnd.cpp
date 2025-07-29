@@ -40,6 +40,7 @@ void g_GridChangedCallBacks( void ){
 }
 
 void DrawPoint( int );
+bool bQueDraw( int );
 
 XYWnd::XYWnd() : ( *g_pWnd->g_pXYWnd ){
 	
