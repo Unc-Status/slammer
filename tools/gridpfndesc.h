@@ -28,5 +28,6 @@ GRID_PEN_DRAW_COLOR Pen_Draw_Black[3] = { 0.0f, 0.0f, 0.0f };
 typedef void(*PFN_ALLOC_PEN_COLOR)();
 typedef void(*PFN_FREE_PEN)(GRID_PEN_DRAW_COLOR);//only for selected
 typedef bool(*BEGIN_PEN_DRAW)(GRID_PEN_DRAW_COLOR, brush_t* b, bool bSel);
+typedef bool(*QUE_DRAW)(GRID_PEN_DRAW_COLOR);
 
 #endif
