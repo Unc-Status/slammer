@@ -6,6 +6,8 @@
 //call to prev grid
 int g_nGridCallbackId = 0;
 
+//==================
+//    globals
 global_t* g_pWnd = nullptr;
 
 #define PAGEFLIPS 2
