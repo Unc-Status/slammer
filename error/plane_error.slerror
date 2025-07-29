@@ -1,4 +1,4 @@
-for *.'%s, in range ( 'SlammerType :' 'Plane' %FAILED% )
+for *.'%s' in range ( 'SlammerType :' 'Plane' %FAILED% )
 
 #POSSIBLE PLANE ERRORS
 #plane math miscalculated
