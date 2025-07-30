@@ -4,8 +4,7 @@
 #ifndef __SLAMMER_PLUGINS_H__
 #define __SLAMMER_PLUGINS_H__
 
-#include "mathlib.h"
-#include "textool/texlib.h"
+#include "stdafx.h"
 
 //unzip
 bool PluginUncrustify(const char * pPluginFile);
