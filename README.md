@@ -17,8 +17,3 @@ Slammer uses GTK for gui
 Presupported built in games :
 
 - Quake
-- Quake II
-- Quake III
-- Doom
-- Doom III
-- Alien : Ufo Invasion
