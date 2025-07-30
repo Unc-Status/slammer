@@ -8,8 +8,8 @@ typedef float efloat;
 typedef int eint;
 typedef double edouble;
 typedef bool eboolean;
-typedef true etrue;
-typedef false efalse;
+//typedef true etrue;
+//typedef false efalse;
 typedef char echar;
 
 typedef struct etype_s{
