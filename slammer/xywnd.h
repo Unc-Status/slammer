@@ -10,14 +10,16 @@
 
 GtkWidget* m_pWidget = nullptr;
 
-class XYWnd : public ( *m_pWidget )
-{
+class XYWnd{
 public:
-    XYWnd();
+    XYWnd(GtkWidget* pWidget);
     virtual ~XYWnd();
 
     int m_nXYRows;
     int m_nXYColumns;
+
+    int XYWidth;
+    int XYHeight;
 
     int xywndnumberid;
 
@@ -38,6 +40,14 @@ public:
       
     bool XYZoomIn(XYWnd * xy);
     bool XYZoomOut(XYWnd * xy);
+
+    void XYPrintWritef();
+
+    void XYPrintPlanes(XYWnd* xy, plane_t* plane);
+    void XYPrintFaces(XYWnd* xy, face_t* face);
+    void XYPrintBrushes(XYWnd* xy, brush_t* brush);
+
+    void XYBackgroundColor(XYWnd* xy);
 };
 
 #endif

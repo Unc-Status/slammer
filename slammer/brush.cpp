@@ -11,8 +11,6 @@
 
 extern "CPLUSPLUS" {
 
-bool bBrushPrimitMode;//will move into global_t eventually
-
 //=====================
 //	globals
 int g_nBrushId = 0;
