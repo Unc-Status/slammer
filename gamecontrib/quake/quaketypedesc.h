@@ -7,7 +7,7 @@
 #define QUAKETYPEDESC_H
 
 //version
-#define QUAKE_VERSION 
+#define QUAKE_VERSION 1
 
 //qtypes
 typedef plane_t qplane_t;
